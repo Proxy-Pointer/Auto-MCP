@@ -6,3 +6,5 @@ test.db
 artifacts/
 output/
 demo_live.html
+.vscode/
+

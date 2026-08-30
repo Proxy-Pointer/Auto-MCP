@@ -9,7 +9,7 @@ def cleanup_db():
     open("test.db", "w").close()  # Create a fresh empty test.db
 
 # ─── Select which scenario to run (1-5) ──────────────────────────────────────
-SCENARIO = 1
+SCENARIO = 3
 
 SCENARIOS = {
     1: {
@@ -33,7 +33,7 @@ SCENARIOS = {
     3: {
         "name": "GitHub Trending AI Tools Digest",
         "task": (
-            "Find the top 5 trending AI or LLM open-source repositories on GitHub this week. "
+            "Search GitHub for 3 popular open-source AI repositories from 2024. "
             "For each repository, fetch its README to extract what it does and how to install it. "
             "Save a curated 'What is Hot in AI this Week' digest to trending_ai_tools_3.md"
         ),

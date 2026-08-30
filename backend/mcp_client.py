@@ -25,9 +25,12 @@ def llm_select_tool(task: str, tools_schema: List[Dict[str, Any]], exclude_tools
     error_context = ""
     if last_error:
         error_context = f"\nPREVIOUS ATTEMPT FAILED with this error: {last_error}\nYou MUST choose a different tool or different arguments this time to fix this error.\n"
+    import datetime
+    current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
     prompt = f"""
 You are a tool execution agent. Your ONLY job is to execute the EXACT step described in the task using the most appropriate tool.
+CURRENT DATE: {current_date}
 
 CRITICAL RULES:
 - Execute ONLY what the current step says. Do NOT proactively set up prerequisites (e.g. do NOT create a table if asked to insert data — just attempt the insert).
@@ -35,10 +38,12 @@ CRITICAL RULES:
 - If the step says "insert data", pick the insert/write tool and attempt it immediately. The orchestrator will handle failures and set up any prerequisites in separate recovery steps.
 - If a "Past Execution Context" is provided, use it to inform your arguments (e.g. use exact column names from a previously created table, or use data retrieved in previous steps).
 - IMPORTANT: All text you generate for the arguments (e.g., file contents, summaries, messages) MUST be written strictly in English. If you receive non-English data in the context or from the task, you MUST translate it to English before including it in the arguments.
+- STRICT SCHEMA COMPLIANCE: You MUST restrict your arguments ONLY to the exact parameters defined in the tool's inputSchema. Do NOT hallucinate, invent, or add extra parameters (like 'perPage', 'limit', etc.) if they do not exist in the schema.
+- GITHUB SEARCH RULE: When asked to search GitHub for a specific year, ALWAYS use bounded date ranges (e.g., `created:2020-01-01..2023-12-31`) rather than open-ended inequalities (like `created:>2024`).
 {error_context}
 Output ONLY a JSON object with two keys:
 1. "tool_name": the string name of the tool to call.
-2. "arguments": a JSON object matching the required schema.
+2. "arguments": a JSON object matching the required schema strictly.
 
 Task: {task}
 Available Tools:

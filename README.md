@@ -57,16 +57,16 @@ flowchart TD
 
 ```
 auto_mcp/
-├── config.py               # Centralized path, LLM, and MCP server configuration
-├── demo_live.html          # Lightweight frontend UI for monitoring SSE execution traces
-├── docker_manager.py       # (Optional) Fallback for running MCPs in isolated containers
-├── graph.py                # LangGraph state machine (Planner, Discovery, Executor, Supervisor)
-├── mcp_client.py           # Core logic for establishing Stdio MCP connections and routing calls
-├── server.py               # FastAPI app — /execute/{scenario_id}, /scenarios
-├── test_scenario.py        # Curated execution scenarios for the orchestrator
-├── artifacts/              # Directory where execution logs and generated output files are stored
-├── requirements.txt        # Python dependencies
-├── .env.example            # Environment variable template
+├── backend/                # Python backend (FastAPI, LangGraph)
+│   ├── config.py           # Centralized path, LLM, and MCP server configuration
+│   ├── docker_manager.py   # (Optional) Fallback for running MCPs in isolated containers
+│   ├── graph.py            # LangGraph state machine (Planner, Discovery, Executor, Supervisor)
+│   ├── mcp_client.py       # Core logic for establishing Stdio MCP connections and routing calls
+│   ├── server.py           # FastAPI app — /execute/{scenario_id}, /scenarios
+│   ├── test_scenario.py    # Curated execution scenarios for the orchestrator
+│   ├── requirements.txt    # Python dependencies
+│   └── .env.example        # Environment variable template
+├── frontend/               # React (Vite) frontend application
 └── README.md
 ```
 

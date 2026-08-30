@@ -98,6 +98,16 @@ WELL_KNOWN_SERVERS = [
             "args": ["--with", "mcp<2", "mcp-server-sqlite", "--db-path", "test.db"],
             "source_link": "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite"
         }
+    },
+    {
+        "name": "github-mcp-server",
+        "description": "Official MCP server for GitHub. Allows searching for repositories, fetching file contents (like READMEs), creating issues, and reading PRs.",
+        "keywords": ["github", "repo", "repository", "code", "trending", "search", "readme", "pull request"],
+        "server": {
+            "name": "github-mcp-server",
+            "command": "npx.cmd",
+            "args": ["-y", "@modelcontextprotocol/server-github"],
+            "source_link": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+        }
     }
 ]
-
