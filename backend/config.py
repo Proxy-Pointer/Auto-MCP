@@ -43,8 +43,8 @@ README_SNIPPET_LENGTH = 1500
 
 # Servers to completely ignore during discovery (by repo name or package name)
 BLACKLISTED_SERVERS = [
-    "finance-mcp",
-    "FinanceMCP",
+   "finance-mcp",
+   "FinanceMCP",
     "alex2yang97/yahoo-finance-mcp",
     "fast-filesystem-mcp"
 ]
@@ -77,17 +77,17 @@ MAX_CANDIDATE_RETRIES = 3
 
 # Pre-defined servers that are preferred if they match the step capability
 WELL_KNOWN_SERVERS = [
-    {
-        "name": "yfinance-mcp",
-        "description": "Stock market data and financial news via yfinance/Yahoo Finance. API key free. Provides stock prices, percentage changes, news, financials, analyst ratings.",
-        "keywords": ["finance", "stock", "yfinance", "market", "stocks", "price", "ticker", "financial", "news"],
-        "server": {
-            "name": "yfinance-mcp",
-            "command": VENV_UVX_PATH,
-            "args": ["yfinance-mcp-server"],
-            "source_link": "https://pypi.org/project/yfinance-mcp-server/"
-        }
-    },
+   {
+       "name": "yfinance-mcp",
+       "description": "Stock market data and financial news via yfinance/Yahoo Finance. API key free. Provides stock prices, percentage changes, news, financials, analyst ratings.",
+       "keywords": ["finance", "stock", "yfinance", "market", "stocks", "price", "ticker", "financial", "news"],
+       "server": {
+           "name": "yfinance-mcp",
+           "command": VENV_UVX_PATH,
+           "args": ["yfinance-mcp-server"],
+           "source_link": "https://pypi.org/project/yfinance-mcp-server/"
+       }
+   },
     {
         "name": "sqlite-mcp",
         "description": "Official MCP server for SQLite databases. Allows querying, reading, and inserting data into local SQLite databases.",

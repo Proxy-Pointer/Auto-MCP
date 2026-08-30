@@ -8,3 +8,6 @@ output/
 demo_live.html
 .vscode/
 
+# Antigravity IDE
+.antigravityignore
+

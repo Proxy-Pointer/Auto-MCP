@@ -1,4 +1,5 @@
 import os
+# Testing IDE stability with Antigravity!
 from graph import app
 
 def cleanup_db():
@@ -9,7 +10,7 @@ def cleanup_db():
     open("test.db", "w").close()  # Create a fresh empty test.db
 
 # ─── Select which scenario to run (1-5) ──────────────────────────────────────
-SCENARIO = 3
+SCENARIO = 5
 
 SCENARIOS = {
     1: {
