@@ -109,13 +109,21 @@ pip install -r requirements.txt
 ### 3. Start the backend API
 
 ```bash
-uvicorn server:app --reload --port 8080
-# Starts on http://localhost:8080
+cd backend
+python server.py
+# Starts on http://localhost:8000
 ```
 
-### 4. Open the UI
+### 4. Start the frontend UI
 
-Simply open `demo_live.html` in your web browser of choice. It will automatically connect to the FastAPI backend running on port 8080.
+Open a new terminal and start the Vite React app:
+```bash
+cd frontend
+npm install
+npm run dev
+# Starts on http://localhost:5173
+```
+Open `http://localhost:5173` in your browser to access the Orchestrator UI.
 
 ---
 
