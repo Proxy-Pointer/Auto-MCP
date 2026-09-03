@@ -33,10 +33,10 @@ flowchart TD
         direction LR
         Planner["🧠 Planner"] -->|Sub-Tasks| Discovery["🔍 Tool Discovery"]
         Discovery -->|MCP Server Specs| Executor["⚙️ MCP Executor"]
-    
+  
         Executor -->|Success| Reporter["📝 Reporter"]
         Executor -->|Failure| Supervisor["🛡️ Auto-Heal Supervisor"]
-    
+  
         Supervisor -->|Recoverable| Planner
         Supervisor -->|Fatal| Reporter
     end
@@ -117,12 +117,14 @@ python server.py
 ### 4. Start the frontend UI
 
 Open a new terminal and start the Vite React app:
+
 ```bash
 cd frontend
 npm install
 npm run dev
 # Starts on http://localhost:5173
 ```
+
 Open `http://localhost:5173` in your browser to access the Orchestrator UI.
 
 ---
@@ -159,6 +161,19 @@ WELL_KNOWN_SERVERS = [
 
 ---
 
-## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+
+## Author
+
+**Partha Sarkar**
+
+## Contact
+
+- **GitHub Issues**: For bug reports.
+- **General Questions**: For general questions, ideas, and enhancement requests, reach out to me on [LinkedIn](https://www.linkedin.com/in/partha-sarkar-lets-talk-ai) or [Email](mailto:partha.sarkarx@gmail.com).
+
+---
+
+## License
+
+© 2026 Partha Sarkar. Licensed under [MIT](../LICENSE).
