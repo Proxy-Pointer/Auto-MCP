@@ -176,4 +176,4 @@ WELL_KNOWN_SERVERS = [
 
 ## License
 
-© 2026 Partha Sarkar. Licensed under [MIT](../LICENSE).
+© 2026 Partha Sarkar. Licensed under [MIT](./LICENSE).
